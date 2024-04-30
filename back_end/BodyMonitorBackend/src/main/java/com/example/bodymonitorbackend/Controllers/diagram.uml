@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-60.21052631578948" y="-539.5549920238825">com.example.bodymonitorbackend.Dtos.SensorDto</node>
+    <node x="617.5529048723143" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Sensor</node>
+    <node x="133.07894736842104" y="-539.5549920238825">com.example.bodymonitorbackend.Dtos.PrescriptionDto</node>
+    <node x="-471.5" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.UserAccount</node>
+    <node x="-294.2863777089783" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Prescription</node>
+    <node x="561.8125766827444" y="-528.8453516632696">com.example.bodymonitorbackend.Dtos.MessageDto</node>
+    <node x="833.9829721362228" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.MessagesRepository</node>
+    <node x="617.5529048723143" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.SensorRepository</node>
+    <node x="-232.0" y="-539.5549920238825">com.example.bodymonitorbackend.Dtos.UserDataDto</node>
+    <node x="-471.5" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.UserRepository</node>
+    <node x="159.0417957924966" y="72.08566596667632">com.example.bodymonitorbackend.Controllers.SensorsController</node>
+    <node x="-77.0" y="-421.66232411378724">com.example.bodymonitorbackend.Dtos.LoginDto</node>
+    <node x="860.6208452596529" y="-64.25165942177529">com.example.bodymonitorbackend.BodyMonitorBackendApplication</node>
+    <node x="510.8590163112275" y="-421.66232411378724">com.example.bodymonitorbackend.Dtos.SensorCreateDto</node>
+    <node x="510.8590163112275" y="65.08605434556722">com.example.bodymonitorbackend.Controllers.NotificationsController</node>
+    <node x="-440.44272445820434" y="-421.66232411378724">com.example.bodymonitorbackend.Dtos.UserDataWebDto</node>
+    <node x="511.3590163112275" y="-216.1791090501266">com.example.bodymonitorbackend.Services.MessagesService</node>
+    <node x="-134.00619195046443" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Note</node>
+    <node x="-440.44272445820434" y="-539.5549920238825">com.example.bodymonitorbackend.Dtos.UserCreateDto</node>
+    <node x="64.4869028371225" y="-421.66232411378724">com.example.bodymonitorbackend.Dtos.LoginDto2</node>
+    <node x="241.4629697609323" y="-421.66232411378724">com.example.bodymonitorbackend.Dtos.SensorUpdateDto</node>
+    <node x="956.6208452596529" y="-145.40511524207704">com.example.bodymonitorbackend.Services.WebsocketConfig</node>
+    <node x="-10.0" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.NotesRepository</node>
+    <node x="315.347" y="-539.5549920238825">com.example.bodymonitorbackend.Dtos.NoteDto</node>
+    <node x="-564.0003897122931" y="-197.39561208536998">com.example.bodymonitorbackend.Services.UserService</node>
+    <node x="-351.2720604930656" y="-197.39561208536998">com.example.bodymonitorbackend.Services.EmailService</node>
+    <node x="-185.94182389937112" y="-197.39561208536998">com.example.bodymonitorbackend.Services.SensorsService</node>
+    <node x="-294.2863777089783" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.AsignmentRepository</node>
+    <node x="156.0417957924966" y="-216.1791090501266">com.example.bodymonitorbackend.Services.NotificationService</node>
+    <node x="-589.000389712293" y="72.08566596667632">com.example.bodymonitorbackend.Controllers.UsersController</node>
+    <node x="784.5125660965068" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Message</node>
+    <node x="197.11479401102883" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.RoleRepository</node>
+    <node x="168.57894736842104" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Role</node>
+    <node x="-223.0" y="-421.66232411378724">com.example.bodymonitorbackend.Dtos.AdminDataDto</node>
+    <node x="370.1228376084059" y="-803.1609907120743">com.example.bodymonitorbackend.Repositories.NotificationRepository</node>
+    <node x="-10.0" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Asignment</node>
+    <node x="349.2838283204803" y="-645.9290361422045">com.example.bodymonitorbackend.Entities.Notification</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Repositories.MessagesRepository" relationship="TO_ONE">
+      <point x="32.499983688772545" y="14.5" />
+      <point x="622.359" y="-166.0" />
+      <point x="964.1208452596529" y="-166.0" />
+      <point x="39.137873123430154" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.PrescriptionDto" relationship="DEPENDENCY">
+      <point x="3.897122930993646E-4" y="14.49961208536999" />
+      <point x="-503.0" y="-108.0" />
+      <point x="50.5" y="-108.0" />
+      <point x="50.5" y="-275.0" />
+      <point x="207.579" y="-275.0" />
+      <point x="5.263157896706616E-5" y="14.499992023882442" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Dtos.SensorCreateDto" relationship="DEPENDENCY">
+      <point x="2.042075034012214E-4" y="-14.499665966676318" />
+      <point x="240.042" y="27.248" />
+      <point x="415.5" y="27.248" />
+      <point x="415.5" y="-254.0" />
+      <point x="589.859" y="-254.0" />
+      <point x="-1.631122745493485E-5" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.Prescription" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="TO_ONE">
+      <point x="3.7770897830569083E-4" y="-14.499963857795478" />
+      <point x="-231.786" y="-668.0" />
+      <point x="-406.5" y="-668.0" />
+      <point x="0.0" y="-14.499963857795478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.LoginDto" relationship="DEPENDENCY">
+      <point x="-14.9996102877069" y="-14.5" />
+      <point x="-518.0" y="-305.0" />
+      <point x="-22.0" y="-305.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.LoginDto2" relationship="DEPENDENCY">
+      <point x="15.0003897122931" y="-14.5" />
+      <point x="-488.0" y="-340.0" />
+      <point x="123.487" y="-340.0" />
+      <point x="9.716287749483854E-5" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Dtos.UserDataDto" target="com.example.bodymonitorbackend.Dtos.SensorDto" relationship="TO_MANY">
+      <point x="66.0" y="0.0" />
+      <point x="-59.0" y="0.0" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Entities.Prescription" relationship="DEPENDENCY">
+      <point x="-73.5" y="-10.499665966676318" />
+      <point x="-734.5" y="76.086" />
+      <point x="-734.5" y="-567.929" />
+      <point x="-251.0" y="-567.929" />
+      <point x="-19.213622291021693" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Entities.Asignment" relationship="DEPENDENCY">
+      <point x="2.042075034012214E-4" y="14.5" />
+      <point x="240.042" y="-48.0" />
+      <point x="-596.5" y="-48.0" />
+      <point x="-596.5" y="-584.429" />
+      <point x="49.5" y="-584.429" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.PrescriptionDto" relationship="DEPENDENCY">
+      <point x="-14.999610287707014" y="-14.499665966676318" />
+      <point x="-530.5" y="-108.0" />
+      <point x="50.5" y="-108.0" />
+      <point x="50.5" y="-275.0" />
+      <point x="207.579" y="-275.0" />
+      <point x="5.263157896706616E-5" y="14.499992023882442" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.SensorRepository" target="com.example.bodymonitorbackend.Entities.Sensor" relationship="DEPENDENCY">
+      <point x="9.51276856540062E-5" y="14.49999071207435" />
+      <point x="698.553" y="-683.0" />
+      <point x="493.0" y="-683.0" />
+      <point x="493.0" y="-631.429" />
+      <point x="-46.999904872314346" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Repositories.RoleRepository" relationship="TO_ONE">
+      <point x="-31.4996102877069" y="-14.5" />
+      <point x="-534.5" y="-210.5" />
+      <point x="-571.0" y="-210.5" />
+      <point x="-571.0" y="-418.66232411378724" />
+      <point x="-688.0" y="-418.66232411378724" />
+      <point x="-688.0" y="-891.161" />
+      <point x="270.61479401102883" y="-891.161" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Dtos.MessageDto" relationship="DEPENDENCY">
+      <point x="78.49998368877255" y="1.090501266105548E-4" />
+      <point x="696.0" y="-201.679" />
+      <point x="696.0" y="-439.162" />
+      <point x="626.813" y="-439.162" />
+      <point x="4.233172555814235E-4" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="CREATE">
+      <point x="-61.0" y="-4.5" />
+      <point x="-626.5" y="-187.39561208536998" />
+      <point x="-626.5" y="-668.0" />
+      <point x="-436.5" y="-668.0" />
+      <point x="-30.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.LoginDto" relationship="DEPENDENCY">
+      <point x="3.897122929856778E-4" y="14.5" />
+      <point x="-515.5" y="133.586" />
+      <point x="-368.772" y="133.586" />
+      <point x="-368.772" y="-305.0" />
+      <point x="-22.0" y="-305.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.NotificationsController" target="com.example.bodymonitorbackend.Entities.Notification" relationship="DEPENDENCY">
+      <point x="-96.5" y="-8.000054345567222" />
+      <point x="466.0" y="71.58600000000001" />
+      <point x="466.0" y="-557.055" />
+      <point x="411.284" y="-557.055" />
+      <point x="1.716795196671228E-4" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.UserDataWebDto" relationship="CREATE">
+      <point x="15.0003897122931" y="14.5" />
+      <point x="-488.0" y="-56.75165942177529" />
+      <point x="-703.0" y="-56.75165942177529" />
+      <point x="-703.0" y="-439.16232411378724" />
+      <point x="-359.44272445820434" y="-439.16232411378724" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.AsignmentRepository" target="com.example.bodymonitorbackend.Entities.Asignment" relationship="DEPENDENCY">
+      <point x="3.7770897830569083E-4" y="-14.5" />
+      <point x="-200.286" y="-835.661" />
+      <point x="-596.5" y="-835.661" />
+      <point x="-596.5" y="-584.429" />
+      <point x="49.5" y="-584.429" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Entities.Message" relationship="DEPENDENCY">
+      <point x="15.000204207503401" y="-14.49989094987339" />
+      <point x="255.042" y="-313.5" />
+      <point x="757.0" y="-313.5" />
+      <point x="757.0" y="-631.429" />
+      <point x="-52.99956609650678" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Dtos.MessageDto" relationship="DEPENDENCY">
+      <point x="15.000204207503401" y="-14.499665966676318" />
+      <point x="255.042" y="42.248" />
+      <point x="696.0" y="42.248" />
+      <point x="696.0" y="-439.162" />
+      <point x="626.813" y="-439.162" />
+      <point x="4.233172555814235E-4" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.AdminDataDto" relationship="DEPENDENCY">
+      <point x="73.5" y="10.500334033323682" />
+      <point x="-385.5" y="97.086" />
+      <point x="-385.5" y="-352.662" />
+      <point x="-144.0" y="-352.662" />
+      <point x="6.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Entities.Asignment" relationship="DEPENDENCY">
+      <point x="3.897122929856778E-4" y="-14.499665966676318" />
+      <point x="-515.5" y="-48.0" />
+      <point x="-596.5" y="-48.0" />
+      <point x="-596.5" y="-584.429" />
+      <point x="49.5" y="-584.429" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Repositories.UserRepository" relationship="TO_ONE">
+      <point x="-83.9997957924966" y="11.783109050126626" />
+      <point x="-24.442" y="-189.896" />
+      <point x="-24.442" y="-221.0" />
+      <point x="-547.0" y="-221.0" />
+      <point x="-547.0" y="-820.661" />
+      <point x="-398.0" y="-820.661" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Dtos.SensorUpdateDto" relationship="DEPENDENCY">
+      <point x="-80.9997957924966" y="3.340333236820925E-4" />
+      <point x="140.0" y="86.586" />
+      <point x="140.0" y="-328.5" />
+      <point x="316.542" y="-328.5" />
+      <point x="-6.920969760932337" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Repositories.UserRepository" relationship="TO_ONE">
+      <point x="3.897122930993646E-4" y="-14.5" />
+      <point x="-503.0" y="-221.0" />
+      <point x="-547.0" y="-221.0" />
+      <point x="-547.0" y="-820.661" />
+      <point x="-398.0" y="-820.661" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.UserDataDto" relationship="DEPENDENCY">
+      <point x="-25.499610287707014" y="14.5" />
+      <point x="-541.0" y="114.086" />
+      <point x="-740.5" y="114.086" />
+      <point x="-740.5" y="-485.34535166326964" />
+      <point x="-176.5" y="-485.34535166326964" />
+      <point x="-10.5" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.Message" target="com.example.bodymonitorbackend.Entities.Sensor" relationship="TO_ONE">
+      <point x="4.339034932172581E-4" y="-14.499963857795478" />
+      <point x="837.513" y="-664.0" />
+      <point x="687.5" y="-664.0" />
+      <point x="22.947095127685657" y="-14.499963857795478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.Sensor" target="com.example.bodymonitorbackend.Entities.Message" relationship="TO_MANY">
+      <point x="15.0" y="14.5" />
+      <point x="679.5529048723143" y="-599.4290361422045" />
+      <point x="837.5125660965068" y="-599.4290361422045" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Services.NotificationService" relationship="TO_ONE">
+      <point x="-1.631122745493485E-5" y="14.5" />
+      <point x="589.859" y="-166.0" />
+      <point x="225.042" y="-166.0" />
+      <point x="-14.999795792496599" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.SensorsService" target="com.example.bodymonitorbackend.Repositories.SensorRepository" relationship="TO_ONE">
+      <point x="-1.7610062887740696E-4" y="14.49961208536999" />
+      <point x="-113.942" y="-17.752" />
+      <point x="400.5" y="-17.752" />
+      <point x="400.5" y="-233.0" />
+      <point x="729.053" y="-233.0" />
+      <point x="30.500095127685654" y="14.49999071207435" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.LoginDto2" relationship="DEPENDENCY">
+      <point x="-14.999610287707014" y="14.5" />
+      <point x="-530.5" y="148.586" />
+      <point x="-203.5" y="148.586" />
+      <point x="-203.5" y="-340.0" />
+      <point x="123.487" y="-340.0" />
+      <point x="9.716287749483854E-5" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="DEPENDENCY">
+      <point x="-16.078795792496607" y="-14.49989094987339" />
+      <point x="223.963" y="-375.162" />
+      <point x="-532.0" y="-375.162" />
+      <point x="-532.0" y="-631.429" />
+      <point x="-65.0" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.UserDataWebDto" relationship="DEPENDENCY">
+      <point x="-73.5" y="10.500334033323696" />
+      <point x="-688.0" y="97.08600000000001" />
+      <point x="-688.0" y="-407.16232411378724" />
+      <point x="-81.0" y="0.0" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Services.MessagesService" relationship="DEPENDENCY">
+      <point x="24.499983688772545" y="-14.5" />
+      <point x="614.359" y="-248.5" />
+      <point x="680.8590163112275" y="-248.5" />
+      <point x="680.8590163112275" y="-211.179" />
+      <point x="78.5" y="-9.49989094987339" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="DEPENDENCY">
+      <point x="-65.99961028770701" y="-14.499665966676318" />
+      <point x="-581.5" y="-523.5" />
+      <point x="-532.0" y="-523.5" />
+      <point x="-532.0" y="-631.429" />
+      <point x="-65.0" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.SensorDto" relationship="CREATE">
+      <point x="61.0" y="10.49961208536999" />
+      <point x="-379.5" y="-172.396" />
+      <point x="-379.5" y="-288.5" />
+      <point x="46.0" y="-288.5" />
+      <point x="47.21052631578948" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Entities.Note" relationship="DEPENDENCY">
+      <point x="-73.49961028770701" y="3.340333236820925E-4" />
+      <point x="-611.5" y="86.58600000000001" />
+      <point x="-611.5" y="-600.0" />
+      <point x="-93.006" y="-600.0" />
+      <point x="1.9195046442632702E-4" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.AdminDataDto" relationship="CREATE">
+      <point x="-25.4996102877069" y="-14.5" />
+      <point x="-528.5" y="-358.662" />
+      <point x="-150.0" y="-358.662" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.NotificationsController" target="com.example.bodymonitorbackend.Services.NotificationService" relationship="TO_ONE">
+      <point x="-1.631122745493485E-5" y="-14.5" />
+      <point x="607.359" y="-166.0" />
+      <point x="225.042" y="-166.0" />
+      <point x="-14.999795792496599" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Repositories.AsignmentRepository" relationship="TO_ONE">
+      <point x="30.0003897122931" y="-14.5" />
+      <point x="-473.0" y="-273.5" />
+      <point x="-641.5" y="-273.5" />
+      <point x="-641.5" y="-850.661" />
+      <point x="-185.286" y="-850.661" />
+      <point x="15.000377708978306" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Entities.Asignment" relationship="CREATE">
+      <point x="55.55766525408876" y="-14.5" />
+      <point x="-447.44272445820434" y="-263.0" />
+      <point x="-259.44272445820434" y="-263.0" />
+      <point x="-259.44272445820434" y="-437.662" />
+      <point x="70.78947368421052" y="-437.662" />
+      <point x="21.28947368421052" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.NoteDto" relationship="DEPENDENCY">
+      <point x="-14.9996102877069" y="14.49961208536999" />
+      <point x="-518.0" y="-138.0" />
+      <point x="438.847" y="-138.0" />
+      <point x="438.847" y="-521.345" />
+      <point x="53.0" y="3.709992023882478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Repositories.SensorRepository" relationship="TO_ONE">
+      <point x="-1.631122745493485E-5" y="-14.49989094987339" />
+      <point x="589.859" y="-233.0" />
+      <point x="729.053" y="-233.0" />
+      <point x="30.500095127685654" y="14.49999071207435" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Repositories.NotesRepository" relationship="TO_ONE">
+      <point x="30.0003897122931" y="14.5" />
+      <point x="-473.0" y="-93.0" />
+      <point x="-718.0" y="-93.0" />
+      <point x="-718.0" y="-918.161" />
+      <point x="68.5" y="-918.161" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Entities.Sensor" relationship="DEPENDENCY">
+      <point x="81.0" y="3.340333236820925E-4" />
+      <point x="493.0" y="86.586" />
+      <point x="493.0" y="-631.429" />
+      <point x="-46.999904872314346" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.BodyMonitorBackendApplication" target="com.example.bodymonitorbackend.BodyMonitorBackendApplication" relationship="DEPENDENCY">
+      <point x="0.0" y="-14.5" />
+      <point x="990.1208452596529" y="-93.0" />
+      <point x="1164.120845259653" y="-93.0" />
+      <point x="1164.120845259653" y="-49.75165942177529" />
+      <point x="129.5" y="0.0" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.UserAccount" target="com.example.bodymonitorbackend.Entities.Prescription" relationship="TO_MANY">
+      <point x="65.0" y="0.0" />
+      <point x="-62.5" y="0.0" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.UserCreateDto" relationship="DEPENDENCY">
+      <point x="73.5" y="3.340333236820925E-4" />
+      <point x="-396.0" y="86.586" />
+      <point x="-396.0" y="-236.0" />
+      <point x="-457.943" y="-236.0" />
+      <point x="-457.943" y="-523.5" />
+      <point x="-71.0" y="1.5549920238825052" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.MessagesRepository" target="com.example.bodymonitorbackend.Entities.Message" relationship="DEPENDENCY">
+      <point x="2.78637771771173E-5" y="14.49999071207435" />
+      <point x="924.983" y="-313.5" />
+      <point x="757.0" y="-313.5" />
+      <point x="757.0" y="-631.429" />
+      <point x="-52.99956609650678" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Services.EmailService" relationship="TO_ONE">
+      <point x="61.0" y="-10.50038791463001" />
+      <point x="-64.0" y="-10.50038791463001" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.UserDataDto" relationship="CREATE">
+      <point x="-54.4996102877069" y="-14.5" />
+      <point x="-557.5" y="-468.84535166326964" />
+      <point x="-166.0" y="-468.84535166326964" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Entities.Role" relationship="CREATE">
+      <point x="-61.0" y="10.5" />
+      <point x="-682.0" y="-172.39561208536998" />
+      <point x="-682.0" y="195.086" />
+      <point x="1153.620845259653" y="195.086" />
+      <point x="1153.620845259653" y="-903.161" />
+      <point x="184.11479401102883" y="-903.161" />
+      <point x="-23.464153357392206" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Entities.Message" relationship="DEPENDENCY">
+      <point x="2.042075034012214E-4" y="14.5" />
+      <point x="240.042" y="118.586" />
+      <point x="757.0" y="118.586" />
+      <point x="757.0" y="-631.429" />
+      <point x="-52.99956609650678" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.RoleRepository" target="com.example.bodymonitorbackend.Entities.Role" relationship="DEPENDENCY">
+      <point x="-48.035846642607794" y="14.5" />
+      <point x="15.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.SensorsService" target="com.example.bodymonitorbackend.Dtos.SensorUpdateDto" relationship="DEPENDENCY">
+      <point x="71.99982389937111" y="7.999612085369989" />
+      <point x="140.0" y="-174.896" />
+      <point x="140.0" y="-328.5" />
+      <point x="316.542" y="-328.5" />
+      <point x="-6.920969760932337" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Dtos.NoteDto" relationship="DEPENDENCY">
+      <point x="-29.999610287707014" y="-14.499665966676318" />
+      <point x="-545.5" y="-138.0" />
+      <point x="438.847" y="-138.0" />
+      <point x="438.847" y="-521.345" />
+      <point x="53.0" y="3.709992023882478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Services.UserService" relationship="DEPENDENCY">
+      <point x="61.0" y="0.0" />
+      <point x="-427.5003897122931" y="-182.89561208536998" />
+      <point x="-427.5003897122931" y="-178.39561208536998" />
+      <point x="61.0" y="4.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Entities.Sensor" relationship="DEPENDENCY">
+      <point x="-78.5" y="1.090501266105548E-4" />
+      <point x="493.0" y="-201.67899999999997" />
+      <point x="493.0" y="-631.429" />
+      <point x="-46.999904872314346" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Entities.Notification" relationship="CREATE">
+      <point x="31.50020420750343" y="-14.5" />
+      <point x="271.54200000000003" y="-264.5" />
+      <point x="449.347" y="-264.5" />
+      <point x="38.063171679519655" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.SensorsService" target="com.example.bodymonitorbackend.Entities.Sensor" relationship="CREATE">
+      <point x="-15.000176100628892" y="14.5" />
+      <point x="-128.942" y="133.586" />
+      <point x="792.0125660965068" y="133.586" />
+      <point x="792.0125660965068" y="-569.429" />
+      <point x="664.5529048723143" y="-569.429" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Entities.Note" relationship="CREATE">
+      <point x="-25.4996102877069" y="14.5" />
+      <point x="-528.5" y="-152.40511524207704" />
+      <point x="-728.5" y="-152.40511524207704" />
+      <point x="-728.5" y="-928.661" />
+      <point x="-78.286" y="-928.661" />
+      <point x="14.720191950464425" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.NotificationRepository" target="com.example.bodymonitorbackend.Entities.Notification" relationship="DEPENDENCY">
+      <point x="51.73616239159412" y="14.49999071207435" />
+      <point x="518.359" y="-507.345" />
+      <point x="466.0" y="-507.345" />
+      <point x="466.0" y="-557.055" />
+      <point x="411.284" y="-557.055" />
+      <point x="1.716795196671228E-4" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.Sensor" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="TO_ONE">
+      <point x="9.51276856540062E-5" y="-14.499963857795478" />
+      <point x="664.553" y="-668.0" />
+      <point x="-406.5" y="-668.0" />
+      <point x="0.0" y="-14.499963857795478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.UserRepository" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="DEPENDENCY">
+      <point x="-73.5" y="-9.287925649914541E-6" />
+      <point x="-532.0" y="-788.661" />
+      <point x="-532.0" y="-631.429" />
+      <point x="-65.0" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.SensorsService" target="com.example.bodymonitorbackend.Dtos.SensorCreateDto" relationship="DEPENDENCY">
+      <point x="-15.000176100628892" y="-14.5" />
+      <point x="-128.942" y="-254.0" />
+      <point x="589.859" y="-254.0" />
+      <point x="-1.631122745493485E-5" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.SensorsService" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="DEPENDENCY">
+      <point x="-1.7610062887740696E-4" y="-14.5" />
+      <point x="-113.942" y="-375.162" />
+      <point x="-532.0" y="-375.162" />
+      <point x="-532.0" y="-631.429" />
+      <point x="-65.0" y="3.614220452163863E-5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.UserAccount" target="com.example.bodymonitorbackend.Entities.Sensor" relationship="TO_MANY">
+      <point x="-15.0" y="-14.499963857795478" />
+      <point x="-421.5" y="-726.661" />
+      <point x="-88.786" y="-726.661" />
+      <point x="-88.786" y="-850.661" />
+      <point x="800.5" y="-850.661" />
+      <point x="800.5" y="-664.0" />
+      <point x="687.5" y="-664.0" />
+      <point x="22.947095127685657" y="-14.499963857795478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Entities.Prescription" relationship="CREATE">
+      <point x="40.557389712293116" y="-14.5" />
+      <point x="-462.443" y="-210.5" />
+      <point x="-245.0" y="-210.5" />
+      <point x="-13.213622291021693" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Services.SensorsService" relationship="TO_ONE">
+      <point x="-14.999795792496599" y="14.5" />
+      <point x="225.042" y="118.586" />
+      <point x="-98.942" y="118.586" />
+      <point x="14.999823899371123" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.UserAccount" target="com.example.bodymonitorbackend.Entities.Role" relationship="TO_ONE">
+      <point x="30.0" y="-14.5" />
+      <point x="-376.5" y="-683.0" />
+      <point x="207.57894736842104" y="-683.0" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.UserAccount" target="com.example.bodymonitorbackend.Entities.Asignment" relationship="TO_MANY">
+      <point x="15.0" y="-14.5" />
+      <point x="-391.5" y="-698.0" />
+      <point x="49.5" y="-698.0" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.MessagesService" target="com.example.bodymonitorbackend.Entities.Message" relationship="CREATE">
+      <point x="14.999983688772545" y="-14.5" />
+      <point x="604.859" y="-375.162" />
+      <point x="868.1208452596529" y="-375.162" />
+      <point x="30.608279163146108" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.UsersController" target="com.example.bodymonitorbackend.Services.UserService" relationship="TO_ONE">
+      <point x="68.00038971229299" y="-14.5" />
+      <point x="55.5003897122931" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.SensorsService" target="com.example.bodymonitorbackend.Repositories.UserRepository" relationship="TO_ONE">
+      <point x="14.999823899371123" y="-14.5" />
+      <point x="-98.942" y="-221.0" />
+      <point x="-547.0" y="-221.0" />
+      <point x="-547.0" y="-820.661" />
+      <point x="-398.0" y="-820.661" />
+      <point x="0.0" y="-14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Repositories.SensorRepository" relationship="TO_ONE">
+      <point x="2.042075034012214E-4" y="-14.49989094987339" />
+      <point x="240.042" y="-233.0" />
+      <point x="729.053" y="-233.0" />
+      <point x="30.500095127685654" y="14.49999071207435" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.Note" target="com.example.bodymonitorbackend.Entities.UserAccount" relationship="TO_ONE">
+      <point x="1.9195046442632702E-4" y="-14.499963857795478" />
+      <point x="-93.006" y="-668.0" />
+      <point x="-406.5" y="-668.0" />
+      <point x="0.0" y="-14.499963857795478" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.UserService" target="com.example.bodymonitorbackend.Dtos.UserCreateDto" relationship="DEPENDENCY">
+      <point x="61.0" y="-3.87914630010755E-4" />
+      <point x="-396.0" y="-182.896" />
+      <point x="-396.0" y="-236.0" />
+      <point x="-457.943" y="-236.0" />
+      <point x="-457.943" y="-523.5" />
+      <point x="-71.0" y="1.5549920238825052" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Controllers.SensorsController" target="com.example.bodymonitorbackend.Services.MessagesService" relationship="TO_ONE">
+      <point x="-14.999795792496599" y="-14.5" />
+      <point x="225.042" y="-2.751999999999999" />
+      <point x="574.859" y="-2.751999999999999" />
+      <point x="-15.000016311227455" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Services.NotificationService" target="com.example.bodymonitorbackend.Repositories.NotificationRepository" relationship="TO_ONE">
+      <point x="25.50020420750343" y="-14.5" />
+      <point x="265.54200000000003" y="-273.5" />
+      <point x="418.4629697609323" y="-273.5" />
+      <point x="418.4629697609323" y="-480.84535166326964" />
+      <point x="302.347" y="-480.84535166326964" />
+      <point x="302.347" y="-681.5" />
+      <point x="466.6228376084059" y="-681.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Entities.UserAccount" target="com.example.bodymonitorbackend.Entities.Note" relationship="TO_MANY">
+      <point x="0.0" y="14.5" />
+      <point x="-406.5" y="-557.055" />
+      <point x="-108.006" y="-557.055" />
+      <point x="-14.999808049535574" y="14.5" />
+    </edge>
+    <edge source="com.example.bodymonitorbackend.Repositories.NotesRepository" target="com.example.bodymonitorbackend.Entities.Note" relationship="DEPENDENCY">
+      <point x="58.0" y="14.49999071207435" />
+      <point x="126.5" y="-600.0" />
+      <point x="-93.006" y="-600.0" />
+      <point x="1.9195046442632702E-4" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5641921397379913" showDependencies="true" x="222.0" y="-356.5" />
+  <SelectedNodes>
+    <node>com.example.bodymonitorbackend.Dtos.LoginDto</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

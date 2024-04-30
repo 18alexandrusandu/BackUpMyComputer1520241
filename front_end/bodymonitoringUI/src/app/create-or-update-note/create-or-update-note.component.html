@@ -1,0 +1,15 @@
+
+
+<p>Note</p>
+<br>
+<input   id="date" value="note.date" type="datetime-local"/>
+<br>
+<label>Description</label>
+<br>
+<textarea id="description" value="{{note.description}}"></textarea> 
+<br>
+<label>Content</label>
+<br>
+<textarea id="text" value="{{note.text}}"></textarea> 
+<br>
+<button (click)="createOrUpdate()">Submit</button>

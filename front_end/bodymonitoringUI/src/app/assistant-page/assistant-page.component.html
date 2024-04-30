@@ -1,0 +1,219 @@
+<html>
+<h2>Welcome assistant</h2>
+<h2 id="assistant_name">Assistent Name:</h2>
+
+
+
+<h3> Notifications <i class="viz_icon  fa-solid fa-chevron-down"></i></h3>
+
+<div>
+<button (click)="deleteAllNotifications(0)">Delete All</button>
+<div id="notifications" style="height:150px;overflow-y:scroll;">
+
+  
+
+<div  *ngFor="let notification of notifications; let a = index;">
+
+<div  class="notify">
+  <i  *ngIf= "notification.sourceType=='ecg too high'" class="fa-solid fa-heart-pulse" style="color:red" ></i>
+  <i  *ngIf= "notification.sourceType=='ecg too low'" class="fa-solid fa-heart-pulse" style="color:blue" ></i>
+  <i  *ngIf= "notification.sourceType=='temperature too high'" class="fa-solid fa-temperature-high" style="color:red" ></i>
+  <i  *ngIf= "notification.sourceType=='temperature too low'" class="fa-solid fa-temperature-low" style="color:blue" ></i>
+
+<span id="source"> {{ notification.source}} </span>
+&#8226;
+<span id="time_spent"> {{notification.timeDifference}} </span>
+
+&nbsp;&nbsp;
+<button style="color:red" (click)="deleteNotification(a)"
+><i class="fa fa-window-close" style="color:red" aria-hidden="false"></i></button>
+
+
+<div>
+<p id="notification_title">{{notification.title}}</p>
+<p id="notification_text">{{notification.text}}</p>
+</div>
+</div>
+<br>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+<h3>All patients <i class="viz_icon fa-solid fa-chevron-down"></i></h3>
+<div id="all_patients">
+
+    <table id="tall" datatable  [dtOptions]= "dtOptions" [dtTrigger]="dtTriggers[1]">
+        <thead>
+          <tr>
+        <th style="display:none;" id="id"></th>
+        <th id="name">Name</th>
+        <th id="username">UserName</th>
+        <th id="phone">Phone</th>
+        <th id="email">Email</th>
+        <th id="status">Assign or Reasign Button </th>
+      </tr>
+        </thead>
+        <tbody *ngIf="allPatients">
+        <tr *ngFor="let patient of allPatients, let a=index">
+         <td  style="display:none;">
+          {{patient.id}}
+         </td>
+          <td>
+            {{patient.name}}
+
+          </td>
+          <td>
+            {{patient.username}}
+          </td> 
+          <td>
+            {{patient.phone}}
+          </td>
+          <td>
+            {{patient.email}}
+          </td>
+          <td>
+            <button (click)= ""> +</button>
+          </td>
+
+
+        </tr>
+            
+        </tbody>     
+    </table>   
+</div>
+
+
+<h3>Unasigned patients <i class="viz_icon fa-solid fa-chevron-down"></i> </h3>
+<div id="unsigned_patients">
+<table id="tun" datatable  [dtOptions]= "dtOptions" [dtTrigger]="dtTriggers[2]">
+<thead>
+  <tr>
+    <th style="display:none;" id="id"></th>
+    <th>Assign</th>
+    <th id="name">Name</th>
+    <th id="username">UserName</th>
+    <th id="phone">Phone</th>
+    <th id="email">Email</th>
+    <th id="DofB">Day of birth</th>
+    <th id="status">Status</th>
+  </tr>
+</thead>
+<tbody *ngIf= "unassignedPatients">
+    <tr *ngFor="let patient of unassignedPatients , let a=index">
+        <td  style="display:none;">
+         {{patient.id}}
+        </td>
+        <td>
+
+            <button (click)= "assign(patient.id)"> +</button>
+
+         </td>
+         <td>
+           {{patient.name}}
+
+         </td>
+         <td>
+           {{patient.username}}
+          </td>
+         <td>
+           {{patient.phone}}
+         </td>
+         <td>
+           {{patient.email}}
+         </td>
+         <td>
+           {{patient.dateOfBirth}}
+         </td>
+         <td>
+          {{patient.status}}
+         </td>
+
+       </tr>
+           
+
+</tbody>
+
+</table>
+
+
+</div>
+
+<h3>Assigned Patients <i class="viz_icon fa-solid fa-chevron-down"></i></h3>
+<div id="asigned_pacients">
+ <table  id="tass" datatable [dtOptions]= "dtOptions" [dtTrigger]="dtTriggers[3]"
+ class="table table-bordered table-striped table-hover" 
+ 
+ >
+<thead>
+    <tr>
+    <th>Watch</th>
+    <th style="display:none;" id="id">Id</th>
+    <th id="priority">Priority</th>
+    <th id="up"> Up</th>
+    <th id="down"> Down</th>
+    <th id="name"> &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;Name</th>
+    <th id="username">UserName</th>
+    <th id="phone">Phone</th>
+    <th id="email">Email</th>
+    <th id="DofB">Day of birth</th>
+    <th id="status">Status</th>
+    <th id="unassign">Unassign</th>
+  </tr>
+</thead>
+<tbody *ngIf= "assignedPatients">
+    <tr *ngFor="let patient of assignedPatients , let a=index">
+        <td>
+            <a [routerLink]= "['/patient/',patient.id]"> <i class="fa-solid fa-eye"></i></a>
+        </td>
+        <td  style="display:none;">
+         {{patient.id}}
+        </td>
+        <td>
+            {{patient.assignment.priority}}
+         </td>
+         <td>
+           <button (click)= "upgrade(a)"><i class="fa-solid fa-arrow-up"></i></button>
+         </td>
+         <td>
+            <button (click)= "downgrade(a)"><i class="fa-solid fa-arrow-down"></i></button>
+         </td>
+         <td>
+           {{patient.name}}
+
+         </td>
+         <td>
+
+          {{patient.username}}
+         </td>
+       
+         <td>
+           {{patient.phone}}
+         </td>
+         <td>
+           {{patient.email}}
+         </td>
+         <td>
+           {{patient.dateOfBirth}}
+         </td>
+         <td>
+          {{patient.status}}
+         </td>
+         <td>
+         <button type="button" (click)="deleteAssignment(a)"><i class="fa fa-window-close" style="color:red" aria-hidden="true"></i></button>
+        </td>
+       </tr>
+    
+</tbody>
+
+</table>
+
+</div>
+
+</html>
+
+

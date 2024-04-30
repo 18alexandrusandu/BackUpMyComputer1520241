@@ -1,0 +1,298 @@
+<h2> Welcome patient</h2>
+
+<html>
+
+<body>
+<div>
+<h3>User Data <i class="fa-solid fa-chevron-down"></i></h3>
+<div id="user_data">
+
+<div *ngIf="changeDataCond==false" >
+<p id="name">Name of patient:{{userData.name}}</p>
+<p id="username">Username of patient:{{userData.username}}</p>
+<p id="DoB">Date of birth:{{userData.dateOfBirth}}</p>
+<p id="email">Email:{{userData.email}}</p>
+<p id="phone">Phone::{{userData.phone}}</p>
+<p id="address">Address:{{userData.address}}</p>
+</div>
+
+<p  *ngIf="changeStatusCond==false" id="status">Status:{{userData.status}}</p>
+
+
+
+<div  *ngIf="changeStatusCond==true" id="status">
+<label>Status:</label>
+<form #statusForm="ngForm" (ngSubmit)= "changeStatus(statusForm)">
+<input name="status"  ngModel  value= "{{userData.status}}"  ngModel>
+<button>Submit</button>
+</form>
+</div>
+
+
+
+
+<div *ngIf="changeDataCond==false" >
+
+<p >Assigned Assistants:<span id="assistants"></span></p>
+
+</div>
+
+<div *ngIf="changeDataCond==false" >
+<button *ngIf= "isAssistant==false" (click)="changeData(0)">Change other data</button>
+<button *ngIf= "isAssistant==false"  (click)="goToChangePasword()">Change password</button>
+<button *ngIf= "isAssistant==true && changeStatusCond==false"  (click)="changeStatus(0)">Change status</button>
+</div>
+
+
+
+
+<div *ngIf= "changeDataCond==true">
+    <form #userDataForm="ngForm" (ngSubmit)= "changeData(userDataForm)">
+    <label>Name of patient:</label>
+ 
+    <input  required  name="name"  ngModel  value= "{{userData.name}}"  #name="ngModel">
+    <p  *ngif="name.errors?.['required']" style="color:red">Name can't be empty></p>
+    <br>
+    <label>Date of birth:</label>
+    <input  required name="DoB" ngModel type="datetime-local"  value="{{userData.dateOfBirth}}" #date="ngModel">
+    <p  *ngif="date.errors?.['required']" style="color:red">Date of birth can't be left empty</p>
+    <br>
+    <label>Username of patient:</label>
+    <input required  name="username" ngModel value= "{{userData.username}}" #username="ngModel"/>
+    <p  *ngif="username.errors?.['required']" style="color:red">Username can't be left empty</p>
+    <br>
+    <label>Email</label>
+    <input required  pattern="/.@.\../"
+     name="email" ngModel  value= "{{userData.email}}" #email= "ngModel" >
+    <p  *ngif="email.errors?.['required']" style="color:red">An email adress is required</p>
+    <p  *ngif="email.errors?.['pattern']" style="color:red">The address provided does not respect the format of a real email address</p>
+    <br>
+    <label>Phone</label>
+    <input required  minlength="10" maxlength="10" pattern="[0-9]+"
+    name="phone" ngModel  value= "{{userData.phone}}" #phone="ngModel">
+    <p  *ngif="phone.errors?.['required']" style="color:red">The phone field can't be left empty</p>
+    <p  *ngif="phone.errors?.['pattern']" style="color:red">A phone number is formed only from digits</p>
+    <p  *ngif="phone.errors?.['minlength']   ||   phone.errors?.['maxlength']"  style="color:red">
+        A correct phone number has to have exactly 10 digits</p>
+
+    <br>
+    <label>Address</label>
+    <input required  name="address" ngModel  value= "{{userData.address}}" #address="ngModel">
+    <br>
+    <p  *ngif="phone.errors?.['required']" style="color:red">The address field can't be left empty</p>
+
+    <button>Submit</button>
+    <button type=":button">Cancel</button>
+    </form>
+     <p style="color:red" *ngIf= "failed_update_empty_fields">Some of the required fields where left empty </p> 
+
+     <p style="color:red" *ngIf= "failed_update_server_problem">The server side had some difficulties try again </p> 
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+<h3>Notifications  <i class="fa-solid fa-chevron-down"></i></h3>
+
+
+<div>
+<button (click) ="deleteAllNotifications(0)">Delete All</button>
+<div id="notifications" style="height:150px;overflow-y:scroll;">
+
+
+    
+ 
+<div  *ngFor="let notification of notifications; let a = index;">
+
+ <div  class="notify">
+    
+<i  *ngIf= "notification.sourceType=='ecg too high'" class="fa-solid fa-heart-pulse" style="color:red" ></i>
+<i  *ngIf= "notification.sourceType=='ecg too low'" class="fa-solid fa-heart-pulse" style="color:blue" ></i>
+
+<i  *ngIf= "notification.sourceType=='temperature too high'" class="fa-solid fa-temperature-high" style="color:red" ></i>
+<i  *ngIf= "notification.sourceType=='temperature too low'" class="fa-solid fa-temperature-low" style="color:blue" ></i>
+
+<span id="source"> {{ notification.sourceType}} </span>
+&#8226;
+<span id="time_spent"> {{notification.timeDifference}} </span>
+
+&nbsp;&nbsp;
+<button style="color:red" 
+(click)="deleteNotification(a)"
+><i class="fa fa-window-close" style="color:red" aria-hidden="false"></i></button>
+
+
+<div>
+<p id="notification_title">{{notification.title}}</p>
+<p id="notification_text">{{notification.text}}</p>
+</div>
+</div>
+<br>
+
+
+</div>
+</div>
+
+
+
+cu id
+</div>
+
+<h3>Sensors  <i class="fa-solid fa-chevron-down"></i></h3>
+<div id="sensors">
+    <button *ngIf= "isAssistant" (click)= "start_addSensor()">Add sensor</button>
+  
+    <table datatable  id="sensors_table" [dtOptions]= "dtOptions" [dtTrigger]="dtTriggers[1]">
+    
+    <thead>
+        <tr>
+        <th *ngIf= "isAssistant">name</th>
+        <th>type</th>
+        <th>low limit</th>
+        <th>high limit</th>
+        <th>Show Data Button</th>
+       </tr>
+
+    </thead>
+   <tbody id="user_sensors_data">
+  <tr *ngFor="let sensor of sensors; let a = index;">
+  
+    <td *ngIf= "isAssistant"> {{sensor.name}} </td>
+    <td> {{sensor.type}}</td>
+     <td> {{sensor.lowLimit}}</td>
+    <td> {{sensor.highLimit}}</td>
+    <td> <button style="color:lightblue" (click)= "showDataForSensor(a)"><i  class="fa-solid fa-eye"></i></button> </td>
+</tr>
+ <tr *ngIf= "addSensors">
+    <td *ngIf= "isAssistant">Sensor id</td>
+    <td *ngIf= "isAssistant"> <input  id="sensor_name_input" value="Name" /></td>
+    <td *ngIf= "isAssistant"> <input id="sensor_type_input"  value="Type" /> </td>
+    <td *ngIf= "isAssistant"> <input id="sensor_low_input"  value="lowLimit" /> </td>
+    <td *ngIf= "isAssistant"><input id="sensor_high_input"  value="highLimit" /></td>
+    <td *ngIf= "isAssistant"><a (click)= "addSensor()"  >Add Data</a> </td>
+ </tr>
+
+
+   </tbody>
+</table>
+
+</div>
+<h3>Chosen Sensor  <i class="fa-solid fa-chevron-down"></i></h3>
+<div id="chosen_sensor">
+
+<div *ngIf="sensor_data!=null">
+<p> Chosen sensor info data</p>
+<p>Sensor Id:{{sensor_data.id}}</p>
+<p>Sensor name:{{sensor_data.name}}</p>
+<p>Sensor type:{{sensor_data.type}}</p>
+</div>
+
+ <p>Date of analysis</p>   
+
+<input id="theDate" type="datetime-local"/>
+<button id="magicButton" (click)= "show_measurements_per_date()">See data</button>
+<button  *ngIf="useStatisticsCond==false" (click)="useStatistics()">See Statsistics</button>
+<button  *ngIf="useStatisticsCond==true" (click)="useStatistics()">Stop Statistics</button>
+<highcharts-chart
+[Highcharts]= "highcharts"
+[options]= "chartOptions"
+style= "width:100%;height:400ox; display: block;">
+</highcharts-chart>
+
+
+<p  *ngIf= "useStatisticsCond==true">Average:<span id="average">{{average}}</span></p>
+<p  *ngIf= "useStatisticsCond==true">Standard Deviation:<span id="sd">{{standard_deviation}}</span></p>
+<p  *ngIf= "useStatisticsCond==true">Minim value:<span id="min">{{min}}</span></p>
+<p  *ngIf= "useStatisticsCond==true">Max value:<span id="max">{{max}}</span></p>
+
+
+</div>
+
+
+  
+   <h3>Notite  <i class="fa-solid fa-chevron-down"></i></h3>
+    <div id="notite">
+        <button *ngIf= "isAssistant" id="addnotes" (click)= "addNote()">Add Notes</button>
+        <button *ngIf= "isAssistant" id="addnotes" (click)= "deleteAllNote()">Delete all</button>
+
+
+        <table datatable  id="notes_table"  [dtOptions]= "dtOptions" 
+        [dtTrigger]="dtTriggers[2]"
+        
+        class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+            <th *ngIf= "isAssistant">Update button</th>
+            <th *ngIf= "isAssistant">Delete button</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Content</th>
+            </tr>
+        </thead>
+       <tbody id="user_notes_data">
+        <tr *ngFor="let note of notite; let a = index;">
+            <td *ngIf= "isAssistant"><button  (click)="updateNote(a)" >Update</button></td>
+            <td  *ngIf= "isAssistant"><button  (click)="deleteNote(a)" >Delete</button></td>
+            <td>{{note.date}}</td>
+            <td>{{note.description}}</td>
+            <td>{{note.text}}</td>
+
+        </tr>
+       </tbody>
+    
+    
+    
+        </table>
+    
+    </div>
+
+
+  
+    
+    
+    <h3>Tratatamente  <i class="fa-solid fa-chevron-down"></i></h3>
+    <div  id="tatamente">
+        <button  *ngIf= "isAssistant" id="addThreatment"  (click)= "addPrescription()">Add Prescription</button>
+        <button  *ngIf= "isAssistant" id="addThreatment"  (click)= "deletePrescriptions()">Delete All</button>
+
+
+        <table datatable  [dtOptions]= "dtOptions" id= "treatments_Table"   cellspacing="0" width="100%"
+        [dtTrigger]="dtTriggers[3]"
+        
+        >
+        <thead>
+            <tr>
+        <th *ngIf= "isAssistant" >Update button</th>
+        <th *ngIf= "isAssistant">Delete button</th>
+        <th>Date of start</th>
+        <th>Date of end</th>
+        <th>Description</th>
+        <th>List Of Items</th>
+         </tr>
+        </thead>
+       <tbody id="user_treatment_data">
+    
+       <tr *ngFor="let tratamanet of  tratamanete; let a = index;">
+        <td *ngIf= "isAssistant"><button  (click)= "updatePrescription(a)">Update</button> </td>
+        <td *ngIf= "isAssistant"><button  (click)= "deletePrescription(a)">Delete</button> </td>
+        <td>{{tratamanet.startDate}}</td>
+        <td>{{tratamanet.endDate}}</td>
+        <td>{{tratamanet.description}}</td>
+        <td>{{tratamanet.text}}</td>
+
+
+        </tr>
+         </tbody>
+    
+        </table>
+    
+    </div>
+</body>
+</html>
+    

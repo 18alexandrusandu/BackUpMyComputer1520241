@@ -1,0 +1,22 @@
+<p>Logn In for everybody</p>
+
+<form id="signinform"  #user="ngForm" (ngSubmit)="logIn(user)">
+    <label>Username</label>
+    <input  required name="username"  ngModel type="text"  #username="ngModel" >
+    <p *ngIf="username.errors?.['required']" style="color:red">Username Field is empt3y</p>
+    <br>
+    <label> Password</label>
+    <input   required ng-minlength="3" name="password"  ngModel type="password"     #pass="ngModel" >
+    <p *ngIf="pass.errors?.['required']"  style="color:red" >Password Field is empt3y</p>
+    <br>
+    <br>
+    <button>Finish log In</button>
+</form>
+<img *ngIf="logare==true" style="width:100px;height:80px" src="../../assets/load.gif" alt="">
+<p *ngIf= "failed" style="color:red">
+    <i class="fa fa-solid fa-circle-x" ></i>
+    Log in failed due to some errors </p>
+
+<p *ngIf= "succeded" style="color:green">
+    <i class="fa fa-solid fa-check-circle" ></i>
+    Log in succeded</p>

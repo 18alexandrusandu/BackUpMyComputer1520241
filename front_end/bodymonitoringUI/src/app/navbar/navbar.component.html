@@ -1,0 +1,10 @@
+<ul>
+<li *ngIf =" isLogedIn && isAdmin"><a [routerLink]= " ['/admin/',id]">Admin</a></li>
+<li *ngIf =" isLogedIn && isAssistant"><a [routerLink]= " ['/assistant/',id]"> Assistant</a></li>
+<li *ngIf =" isLogedIn && isPatient" ><a [routerLink]= " ['/patient/',id]">Patient</a></li>
+<li><a routerLink="/contact">Contact</a></li>
+<li *ngIf =" !isLogedIn"><a routerLink= "/signIn" >Sign In</a></li>
+<li *ngIf =" !isLogedIn"><a routerLink= "/logIn" >Log In</a></li>
+<li  *ngIf =" isLogedIn" (click)= 'logout()' > Log out<li>
+
+</ul>

@@ -1,0 +1,12 @@
+
+ul {  display:flex;
+    list-style:none;
+    padding: 0px;
+    justify-content: space-between;
+     text-align : center }
+
+ul li {  padding:5px 10px; }
+
+div{
+    border-style:none;
+    }

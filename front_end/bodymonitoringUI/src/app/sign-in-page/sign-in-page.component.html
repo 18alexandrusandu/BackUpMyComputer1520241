@@ -1,0 +1,47 @@
+<p>Sign in for patients only</p>
+
+<form id="signinform"   #user="ngForm" (ngSubmit)= "signIn(user)">
+    <label>Username</label>
+    <input required  name="username" ngModel   type="text" #username="ngModel">
+    <p *ngIf="username.errors?.['required']" style="color:red"></p>
+    <br>
+    <label>Name</label>
+    <input required name="name"  ngModel   type="text" #name="ngModel">
+    <br>
+    <p  *ngIf="name.errors?.['required']" style="color:red">Name field can't be empty</p>
+    <label>Date of birth</label>
+    <input required name="DoB"  ngModel  type="date"   #date="ngModel">
+    <p *ngIf="date.errors?.['required']"  style="color:red">Username field can't be empty</p>
+    <br>
+    <label>Phone</label>
+    <input required name="phone" ngModel   type="text"  #phone="ngModel">
+    <p  *ngIf="phone.errors?.['required']" style="color:red">Phone field can't be empty</p>
+    <br>  
+     <label>Email</label>
+    <input required pattern="/.@.\../"
+    name="email" ngModel type="text"  #email="ngModel">
+    <p *ngIf="email.errors?.['required']"  style="color:red">Email field can't be null</p>
+    <p *ngIf="email.errors?.['pattern']" style="color:red">Email format  does not coresponds to a real email address</p>
+
+    <br>
+    <label>Address</label>
+    <input required  name="address" ngModel   type="text"   #address="ngModel">
+    <p *ngIf="address.errors?.['required']" style="color:red">Adress field shpould nopt be empty</p>
+    <br>
+    <label>Password</label>
+    <input required name="password" ngModel   type="text"   #pass="ngModel">
+    <p *ngIf="pass.errors?.['required']" style="color:red">Password can't be empty</p>
+
+
+    <br>
+    <br>
+    <button >Finish sign in</button>
+    <p *ngIf= "failed" style="color:red">
+        <i class="fa fa-solid fa-circle-x" ></i>
+        Sign in succedded</p>
+
+    <p *ngIf= "success" style="color:green">
+        <i class="fa fa-solid fa-check-circle" ></i>
+        Sign in failed due to some errors </p>
+
+</form>

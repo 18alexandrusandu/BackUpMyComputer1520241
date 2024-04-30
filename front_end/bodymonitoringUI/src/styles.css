@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+input {
+
+    width:100px;
+}
+table
+{
+ border-style: solid;
+border-width:1px;
+border-color: black;
+ background-color:teal;
+
+}
+thead
+{
+    background-color:red;
+}
+
+td{
+background-color: lightblue;
+border-style: solid;
+border-width:1px;
+border-color: black;
+}
+div{
+  
+    border-style: solid;
+    border-width:1px;
+    border-color: black;
+    }

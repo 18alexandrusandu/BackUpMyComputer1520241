@@ -1,0 +1,40 @@
+
+<p>Prescription</p>
+<br>
+
+<label>Start Date for administration of prescriptiion</label>
+<br>
+<input required id="dateStart" type="datetime-local" [(ngModel)]="startInput" #start="ngModel" />
+<br>
+<p *ngIf="start.errors?.['required']" style="color:red">Date of start cannot be empty</p>
+<label>End Date for administration of prescriptiion</label>
+<br>
+
+<input required  id="dateEnd" type="datetime-local" [(ngModel)]="endInput" #end= "ngModel"/>
+<p *ngIf="end.errors?.['required']" style="color:red">Date of end cannot be empty</p>
+<br>
+
+<label>Description</label>
+<br>
+<textarea  required id="description"  #description="ngModel" [(ngModel)]="prescription.description"></textarea> 
+<br>
+<p *ngIf="description.errors?.['required']" style="color:red">Description cannot be empty</p>
+
+
+<label>Content</label>
+
+<div id="items">
+<button (click)= "addItem()">Add item</button>
+<br>
+<p>Item 1</p>
+<textarea class="item" id="text" [(ngModel)]= "prescription.text"   ngModel   #first="ngModel" ></textarea> 
+<p *ngIf="first.errors?.['required']" style="color:red">First Item cannot be empty</p>
+
+
+
+
+<br>
+</div>
+<p></p>
+<button (click)= "createOrUpdate()">Submit</button>
+

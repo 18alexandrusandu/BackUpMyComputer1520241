@@ -1,0 +1,346 @@
+<h2>Welcome Admin</h2>
+<h2 id="admin_name" >Name</h2>
+
+<h3>Users <i class="fa-solid fa-chevron-down"></i></h3>
+<div>
+
+<button><a routerLink="/createOtherUser">Add user</a></button>
+<table  id="tUsers" datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTriggers[1]">
+    <thead>
+        <tr>
+        <th>Delete button</th>
+        <th>Update button</th>
+        <th id="id">Id</th>
+        <th id="name">Name</th>
+        <th id="username">UserName</th>
+        <th id="phone">Phone</th>
+        <th id="email">Email</th>
+        <th id="address">Address</th>
+        <th id="role">Role</th>
+        <th id="DofB">Day of birth</th>
+        <th id="status">Status</th>
+    </tr>
+    </thead>
+   <tbody *ngIf= "users">
+    <tr   *ngFor="let user of users , let a= index"> 
+<td >
+<button (click)= "deleteUser(a)">Delete</button>
+
+</td>
+<td > 
+ <button  (click)= "updateUser(a)">Update</button>
+    
+</td>
+<td>
+    {{user.id}}
+</td>
+
+<td *ngIf= "updateUserCond==false">
+    {{user.name}}
+
+</td>
+
+<td *ngIf= "updateUserCond==false">
+    {{user.username}}
+</td>
+<td *ngIf= "updateUserCond==false">
+    {{user.phone}}
+</td>
+<td *ngIf= "updateUserCond==false">
+    {{user.email}}
+</td>
+<td *ngIf= "updateUserCond==false">
+    {{user.address}}
+</td>
+<td *ngIf= "updateUserCond==false">
+    {{user.role.type}}
+</td>
+<td *ngIf= "updateUserCond==false">
+    {{user.dateOfBirth}}
+</td>
+<td *ngIf= "updateUserCond==false">
+    {{user.status}}
+ </td>
+
+    
+    <td *ngIf= "updateUserCond==true">
+        <input id="update_user_name{{a}}" value="{{user.name}}">
+    
+    </td>
+    
+    <td *ngIf= "updateUserCond==true">
+        <input  id="update_user_username{{a}}" value="{{user.username}}">
+    </td>
+    <td *ngIf= "updateUserCond==true">
+        <input id="update_user_phone{{a}}" value="{{user.phone}}">
+      
+    </td>
+    <td *ngIf= "updateUserCond==true">
+        <input t id="update_user_email{{a}}" value="{{user.email}}"> 
+      
+    </td>
+    <td *ngIf= "updateUserCond==true">
+        <input  t id="update_user_address{{a}}" value="{{user.address}}"> 
+    
+     </td>
+    <td *ngIf= "updateUserCond==true">
+        <input  t id="update_user_role{{a}}" value="{{user.role.type}}">  
+    </td>
+    <td *ngIf= "updateUserCond==true">
+        <input t id="update_user_DoB{{a}}" value="{{user.dateOfBirth}}"> 
+      
+    </td>
+    <td *ngIf= "updateUserCond==true">
+        <input  t id="update_user_status{{a}}" value="{{user.status}}"> 
+    
+     </td>
+  
+
+
+
+
+</tr>
+   </tbody>
+</table>
+
+</div>
+<h3>Assistents <i class="fa-solid fa-chevron-down"></i></h3>
+<div>
+
+<table id="tassist" datatable [dtOptions]= "dtOptions" [dtTrigger]="dtTriggers[2]">
+    <thead>
+
+        <tr>
+    <th id="id">Id</th>
+    <th id="name">Name</th>
+    <th id="username">UserName</th>
+    <th id="phone">Phone</th>
+    <th id="DofB">Day of birth</th>
+    <th id="status">Status</th>
+      </tr>
+</thead >
+<tbody  *ngIf= "assistants">
+<tr *ngFor= "let assistant  of assistants , let a= index">
+    <td>
+        {{assistant.id}}
+    </td>
+    
+    <td >
+        {{assistant.name}}
+    
+    </td>
+    
+    <td >
+        {{assistant.username}}
+    </td>
+    <td >
+        {{assistant.phone}}
+    </td>
+    <td >
+        {{assistant.dateOfBirth}}
+    </td>
+    <td>
+        {{assistant.status}}
+     </td>
+
+
+</tr>
+
+
+
+
+</tbody>
+
+</table>
+
+
+
+</div>
+
+
+<h3>Assistants-User Asignments <i class="fa-solid fa-chevron-down"></i></h3>
+<div>
+    <button>Add assignment</button>
+    
+    <table id="tasignments" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTriggers[3]">
+        <thead>
+            <tr>
+        <th>Delete button</th>
+        <th>Update button</th>
+        <th id="assistenat_id">Assistent Id</th>
+        <th id="user_id">User Id</th>
+          </tr>
+    </thead>
+    <tbody  >
+        <tr *ngFor= "let assignment  of assignments , let a= index">
+         <td><button (click)= "deleteAssignment(a)">Delete</button></td>
+         <td><button (click)= "updateAssignment(a)">Update</button></td>
+         <td *ngIf= "updateAssignmentCond==false">{{assignment.asistantId}}</td>
+         <td *ngIf= "updateAssignmentCond==false">{{assignment.patientId}}</td>
+         <td *ngIf= "updateAssignmentCond==true"><input id="update_assignment_asistant_id{{a}}" value="{{assignment.asistantId}}"/></td>
+         <td *ngIf= "updateAssignmentCond==true"><input  id="update_assignment_patient_id{{a}}" value="{{assignment.patientId}}"/></td>
+      
+         
+         
+        </tr>
+    </tbody>
+    <tr *ngIf= "addAsignment==true">
+        <td>---</td>
+        <td>---</td>
+        <td><input id="add_asignment_assistant_id" value="assistent_id"></td>
+        <td><input id="add_asignment_patient_id" value="patient_id"></td>
+      
+     </tr>
+
+
+    
+    </table>
+
+
+</div>
+<h3>Sensors <i class="fa-solid fa-chevron-down"></i></h3>
+<div>
+ 
+    <button (click) ="startaddSensor()">Add Sensors</button>
+    <table  id="tsensors" datatable [dtOptions]="dtOptions"  [dtTrigger]="dtTriggers[0]">
+
+        <thead>
+            <tr>
+    <th>Delete/Add  button</th>
+     <th>Update button</th>
+    <th>Sensor Id</th>
+    <th>Sensor name</th>
+    <th>Sensor type</th>
+    <th>Sensor owner id </th>
+    <th>Sensor low limit </th>
+     <th>Sensor high limit </th>
+     </tr>
+    
+   
+  </thead>
+  <tbody  >
+    
+   
+
+   <tr *ngFor= "let sensor  of sensors , let a= index">
+<td>
+    <button (click)= "deleteSensor(a)" >Delete </button>
+</td>
+<td>
+ <button (click)= "updateSensor(a)" >Update </button>
+</td>
+   <td *ngIf= "updateSensorCond==false">
+    {{sensor.id}}
+   </td>
+   <td *ngIf= "updateSensorCond==true">
+    <input id="update_sensor_id{{a}}" value={{sensor.id}}>
+   </td>
+
+
+   <td *ngIf= "updateSensorCond==false">
+    {{sensor.name}}
+   </td>
+   <td *ngIf= "updateSensorCond==true">
+    <input id="update_sensor_name{{a}}" value={{sensor.name}}>
+   </td>
+   <td *ngIf= "updateSensorCond==false">
+    {{sensor.type}}
+   </td>
+   <td *ngIf= "updateSensorCond==true">
+    <input id="update_sensor_type{{a}}" value={{sensor.type}}>
+   </td>
+   <td *ngIf= "updateSensorCond==false">
+    {{sensor.ownerId}}
+   </td>
+   <td *ngIf= "updateSensorCond==true">
+    <input id="update_sensor_owner{{a}}" value={{sensor.ownerId}}>
+   </td>
+   <td *ngIf= "updateSensorCond==false">
+    {{sensor.lowLimit}}
+   </td>
+   <td *ngIf= "updateSensorCond==true">
+    <input id="update_sensor_low_limit{{a}}" value={{sensor.lowLimit}}>
+   </td>
+
+   <td *ngIf= "updateSensorCond==false">
+    {{sensor.highLimit}}
+   </td>
+   <td *ngIf= "updateSensorCond==true">
+    <input id="update_sensor_high_limit{{a}}" value={{sensor.highLimit}}>
+   </td>
+  
+
+
+   </tr>
+      
+<tr *ngIf= "addSensors==true">
+<td>
+        <button (click)="createSensor()">Add </button>
+ </td>
+ <td>
+ </td>   
+<td>
+</td>
+<td>
+    <input id="sensor_name" value="Name">
+
+</td>
+<td>
+    <input id="sensor_type" value="Type">
+</td>
+<td>
+ <input id="sensor_ownerId" value="OwnerId">
+</td>
+<td>
+
+</td>
+<td>
+    <input id="sensor_lowLimit" value="0">
+   </td>
+   <td>
+    <input id="sensor_highLimit" value="25">
+   </td>
+
+</tr>
+
+ </tbody>
+
+
+</table>
+</div>
+    <h3>Measurements <i class="fa-solid fa-chevron-down"></i></h3>
+<div>
+   
+    <table id="tMeasurements" datatable [dtOptions]= "this.dtOptions" [dtTrigger]="this.dtTriggers[4]"
+     class="table"
+    
+    >
+        <thead>
+            <tr>
+        <th>Measurement id</th>
+        <th>Measuremnt value</th>
+        <th>Measurement unit</th>
+        <th>Measuremnt type</th>
+        <th> Sensor id</th>
+        <th>Sensor name</th>
+        <th>Measuremnt lower limit</th>
+        <th>Measuremnt higher limit</th>
+           </tr>
+    </thead >
+    <tbody *ngIf= "measurements">
+   <tr  *ngFor= "let measurement  of measurements , let a= index ">
+    <td>{{measurement.Id}}</td>
+    <td>{{measurement.value}}</td> 
+    <td>{{measurement.unit}}</td> 
+    <td>{{measurement.type}}</td> 
+    <td>{{measurement.sensor.id}}</td>
+    <td>{{measurement.sensor.name}}</td>
+    <td>{{measurement.sensor.lowLimit}}</td>
+    <td>{{measurement.sensor.highLimit}}</td>
+      </tr>
+    </tbody>
+    </table>
+
+
+</div>
+
